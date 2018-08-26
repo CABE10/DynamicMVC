@@ -1,0 +1,7 @@
+﻿
+1) Return a String from the Server
+2) Client-side data manipulation
+   Server-side data manipulation
+3) Basic Data Binding
+4) Model Validation (String Length, Email Address, Age)
+5) Dynamic Collections (Add, Remove, Modify)
