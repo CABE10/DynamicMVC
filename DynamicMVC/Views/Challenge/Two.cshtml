@@ -1,8 +1,49 @@
 ﻿@model ChallengeTwoModel
+@section scripts {
+    <script type="text/javascript">
+        var testProp = @Json.Serialize(Model.Str)
+        document.getElementById("txtArea1").value = testProp;
+
+        function ToLowerJS() {
+            var str = document.getElementById("txtArea1").value;
+            var result = str.toLowerCase();
+            document.getElementById("txtArea1").value = result;
+        }
+        function ToLowerServer() {
+            var str = document.getElementById("txtArea1").value;
+            $.ajax({
+                type: "POST",
+                dataType: 'text',//'application/json; charset=utf-8',
+                cache: false,
+                data: JSON.stringify(str),
+                url: '@Url.Action("LowerCaseTransform", "Challenge")',
+                contentType: 'application/json; charset=utf-8',
+                success: function (result) {
+                    console.log('success');
+                    console.log(result);
+                    document.getElementById("txtArea1").value = stripquotes(result);
+                },
+                error: function (err) {
+                    console.log('error');
+                    console.log(err);
+                },
+            });
+        }
+        function stripquotes(a) {
+            if (a.charAt(0) === '"' && a.charAt(a.length - 1) === '"') {
+                return a.substr(1, a.length - 2);
+            }
+            return a;
+        }
+    </script>
+}
 <h2>Challenge 2</h2>
 <p>Client and server-side data manipulation.</p>
 <img alt="leaves" src="~/images/leaves.gif" id="rightImg" />
 
-@Html.TextArea("Test", Model.Str)
+@Html.TextArea("txtArea1")
 
-<a asp-controller="Challenge" asp-action="Two">Server Transform!</a>
+<br />
+<a onclick="ToLowerJS()" href="#">Client-side To Lowercase!</a><br />
+<a onclick="ToLowerServer()" href="#">Server-side To Lowercase!</a><br />
+<a asp-controller="Challenge" asp-action="Two">Reset</a>

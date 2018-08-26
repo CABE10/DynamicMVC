@@ -23,14 +23,19 @@ namespace DynamicMVC.Controllers
         {
             if(model == null || model.Str == null)
             {
-                model = new ChallengeTwoModel() { Str = "This Is A Test." };
+                model = new ChallengeTwoModel() { Str = "One Day, Everything Will Be Just Fine." };
             }
-            else
-            {
-
-            }
-
             return View(model);
+        }
+        [HttpPost]
+        public JsonResult LowerCaseTransform([FromBody]string txt)
+        {
+            string result = txt;
+            if (!String.IsNullOrEmpty(result))
+            {
+                result = result.ToLower();
+            }
+            return Json(result);
         }
         public async Task<IActionResult> Three()
         {

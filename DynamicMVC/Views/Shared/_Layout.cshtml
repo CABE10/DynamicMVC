@@ -6,6 +6,7 @@
     <title>Dynamic MVC</title>
     <link href="~/content/initial.css" rel="stylesheet" />
     <link href="~/content/basics.css" rel="stylesheet" />
+    <script src="~/js/jquery.js"></script>
 </head>
 <body>
     <div id="outer">
@@ -25,6 +26,7 @@
         </div>
         <div id="cont">
             @RenderBody()
+            @RenderSection("scripts", required: false)
         </div>
         <div id="ftr">CABE @DateTime.Now.Year</div>
     </div>
