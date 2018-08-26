@@ -1,1 +1,44 @@
-﻿<h2>Three</h2>
+﻿@model ChallengeThreeModel
+<h2>Challenge 3</h2>
+<p>Basic Data Binding</p>
+<img alt="leaves" src="~/images/leaves.gif" id="rightImg" />
+<form asp-controller="Challenge" asp-action="Three" method="post" class="form-horizontal" role="form">
+    <div class="form-group">
+        <label asp-for="Alias" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Alias" class="form-control" size="30" />
+            <span asp-validation-for="Alias" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FavoriteColor" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="FavoriteColor" class="form-control" size="30" />
+            <span asp-validation-for="FavoriteColor" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Age" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Age" class="form-control" size="30" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    </div>
+</form>
+
+@if(Model != null && Model.IsSubmitted)
+{
+    <br /><h2>Binding Results:</h2>
+    <p>Alias: @Model.Alias</p>
+    <p>Age: @Model.Age</p>
+    <p>Favorite Color: @Model.FavoriteColor</p>
+}
+

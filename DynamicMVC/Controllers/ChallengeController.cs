@@ -41,6 +41,14 @@ namespace DynamicMVC.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> Three(ChallengeThreeModel model)
+        {
+            model.IsSubmitted = true;
+            return View(model);
+        }
+
+
         public async Task<IActionResult> Four()
         {
             return View();
