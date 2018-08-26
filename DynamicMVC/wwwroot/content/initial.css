@@ -1,0 +1,26 @@
+
+html, body, form, fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre,
+blockquote, ul, ol, dl, address {
+	margin: 1em 0;
+	padding: 0;
+}
+
+li, dd, blockquote {
+	margin-left: 1em;
+}
+
+form label {
+	cursor: pointer;
+}
+fieldset {
+	border: none;
+}
+
+input, select, textarea {
+	font-size: 100%;
+}

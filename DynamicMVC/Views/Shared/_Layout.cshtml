@@ -3,11 +3,34 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Dynamic MVC</title>
+    <link href="~/content/initial.css" rel="stylesheet" />
+    <link href="~/content/basics.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div id="outer">
+        <div id="hdr">
+            <h1>Dynamic MVC by CABE</h1>
+        </div>
+        <div id="nav">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Challenge 1</a></li>
+                <li><a href="#">Challenge 2</a></li>
+                <li><a href="#">Challenge 3</a></li>
+                <li><a href="#">Challenge 4</a></li>
+                <li><a href="#">Challenge 5</a></li>
+            </ul>
+        </div>
+        <div id="cont">
+            @RenderBody()
+        </div>
+        <div id="ftr">CABE @DateTime.Now.Year</div>
     </div>
 </body>
 </html>
+
+
+
+

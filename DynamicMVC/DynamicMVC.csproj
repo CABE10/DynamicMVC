@@ -7,6 +7,7 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\Challenge\" />
     <Folder Include="wwwroot\content\" />
     <Folder Include="wwwroot\fonts\" />
     <Folder Include="wwwroot\images\" />
