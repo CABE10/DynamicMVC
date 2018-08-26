@@ -4,3 +4,5 @@
 
 /DynamicMVC/obj
 /.vs/DynamicMVC/v15/Server/sqlite3
+/DynamicMVC/bin/Debug/netcoreapp2.1
+/.vs/DynamicMVC/DesignTimeBuild/.dtbcache
