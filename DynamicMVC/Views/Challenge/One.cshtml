@@ -1,0 +1,10 @@
+﻿@model ChallengeOneModel
+<h2>Challenge 1</h2>
+<p>Return a String from the Server.</p>
+<img alt="leaves" src="~/images/leaves.gif" id="rightImg" />
+<a asp-controller="Challenge" asp-action="One" asp-route-id="True">Get String</a>
+
+@if (Model != null && !String.IsNullOrEmpty(Model.Str))
+{
+    <p>@Model.Str</p>
+}

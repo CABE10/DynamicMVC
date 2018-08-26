@@ -1,0 +1,8 @@
+﻿@model ChallengeTwoModel
+<h2>Challenge 2</h2>
+<p>Client and server-side data manipulation.</p>
+<img alt="leaves" src="~/images/leaves.gif" id="rightImg" />
+
+@Html.TextArea("Test", Model.Str)
+
+<a asp-controller="Challenge" asp-action="Two">Server Transform!</a>
